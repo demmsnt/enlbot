@@ -2,9 +2,14 @@
 # -*- coding: utf-8 -*-
 import xmppch
 import hgch
-from config import CONNDATA
 import logging
 import sys
+import os.path
+
+if os.path.exists('config_local.py'):
+    from config_local import CONNDATA
+else:
+    from config import CONNDATA
 
 class Coordinator():
         def __init__(self):
